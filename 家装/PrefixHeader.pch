@@ -1,0 +1,36 @@
+//
+//  PrefixHeader.pch
+//  家装
+//
+//  Created by mac on 16/5/4.
+//  Copyright © 2016年 mac. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import "Masonry.h"
+#import <AFNetworking.h>
+#import <UIImageView+WebCache.h>
+#import <AFHTTPSessionManager.h>
+#import <AFURLSessionManager.h>
+
+#import "RequestServer.h"
+#import "MBProgressHUD+NJ.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define MAS_SHORTHAND //use Masonry without the 'mas_' prefix
+#define MAS_SHORTHAND_GLOBALS //enable auto-boxing for default syntax
+#define  jiange (CGRectGetWidth([UIScreen mainScreen].bounds)-40-40*4)/3
+#define  screenwidth CGRectGetWidth([UIScreen mainScreen])
+
+
+#define Width [[UIScreen mainScreen] bounds].size.width
+#define Height [[UIScreen mainScreen] bounds].size.height
+
+
+
+
+
+#endif /* PrefixHeader_pch */
