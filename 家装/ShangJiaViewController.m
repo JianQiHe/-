@@ -51,6 +51,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     k=1;
     
     //    [self topTitleBtnClick];
@@ -174,6 +176,7 @@
     }];
     
     tabView.mj_footer =[MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        
         [self moredata];
         // 进入刷新状态后会自动调用这个block
         
@@ -200,12 +203,13 @@
         dict1=[NSJSONSerialization  JSONObjectWithData:data1 options:0 error:nil];
         NSLog(@"获取到的数据为：%@",dict1);
         if ([dict1 [@"data"]count]==0) {
-            [self ifNoData];
             
+            [self ifNoData];
         }else{
             
-        [tabView reloadData];
-        [tabView.mj_header endRefreshing];
+            [tabView reloadData];
+            [tabView.mj_header endRefreshing];
+            [backgroundView removeFromSuperview];
         }
     }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"发生错误123！%@",error);

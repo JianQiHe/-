@@ -9,9 +9,10 @@
 #import "RequestServer.h"
 #import "AFNetworking.h"
 
+
 @implementation RequestServer
 
-+ (void)RequestWithURL:(NSString *)urlStr {
++ (void)RequestWithURL:(NSString *)urlStr type:(NSString *)type paramsDic:(NSDictionary *)pamsDic  success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -24,9 +25,12 @@
     
     [manager POST:@"POST" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
-        NSLog(@"responseObject:%@", responseObject);
+        NSLog(@"responseObject: %@", responseObject);
+        success(operation, responseObject);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         
+        NSLog(@"error: %@", error);
+        failure(operation, error);
     }];
 }
 

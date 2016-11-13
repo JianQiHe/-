@@ -392,11 +392,11 @@
 
 -(void)BuyAtNow
 {
-    [MBProgressHUD showError:@"未登录!"];
+//    [MBProgressHUD showError:@"未登录!"];
 }
 -(void)AddShopCar
 {
-    [MBProgressHUD showError:@"未登录!"];
+//    [MBProgressHUD showError:@"未登录!"];
     [self createCommodityView];
     
     
