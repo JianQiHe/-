@@ -127,7 +127,7 @@
     [design mas_makeConstraints:^(MASConstraintMaker *make){
         make.right.equalTo(scorelab.mas_left).offset(-1);
         make.bottom.equalTo(scorelab.mas_bottom).offset(2);
-        make.width.equalTo(@30);
+        make.width.equalTo(@35);
         make.height.equalTo(@10);
     }];
     
@@ -179,7 +179,7 @@
     [serve mas_makeConstraints:^(MASConstraintMaker *make){
         make.right.equalTo(servelab.mas_left).offset(-1);
         make.bottom.equalTo(servelab.mas_bottom).offset(2);
-        make.width.equalTo(@30);
+        make.width.equalTo(@35);
         make.height.equalTo(@10);
     }];
     
@@ -227,7 +227,7 @@
     [tiexin mas_makeConstraints:^(MASConstraintMaker *make){
         make.right.equalTo(tiexinlab.mas_left).offset(-1);
         make.bottom.equalTo(tiexinlab.mas_bottom).offset(2);
-        make.width.equalTo(@30);
+        make.width.equalTo(@35);
         make.height.equalTo(@10);
     }];
     

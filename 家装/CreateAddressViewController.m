@@ -34,5 +34,33 @@
 - (IBAction)touchUpCommitBtn:(id)sender {
 }
 
+#pragma mark -
+#pragma mark UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    [self closeKeyBorad];
+    return YES;
+}
 
+#pragma mark -
+#pragma mark -UITextViewDelegate
+- (void)textViewDidEndEditing:(UITextView *)textView {
+   
+    [textView resignFirstResponder];
+
+    [self closeKeyBorad];
+
+}
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if ([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+- (void)closeKeyBorad{
+    
+    [self.view endEditing:YES];
+}
 @end

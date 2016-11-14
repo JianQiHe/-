@@ -259,6 +259,8 @@
      UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"预约成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
     [myAlertView show];
 }
+
+#pragma mark - 找设计师
 -(void)wangluoqingqiu
 {
     

@@ -54,7 +54,11 @@
     //确定是水平滚动，还是垂直滚动
     arrs = [[NSMutableArray alloc]init];
     k=1;
-    self.title =@"工人";
+    if ([self.strType isEqualToString:@"案例"]) {
+        self.title = @"案例";
+    }else{
+        self.title =@"工人";
+    }
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc] init];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
@@ -299,7 +303,7 @@
 
 }
 
-
+#pragma mark- 找工人
 -(void)wangluoqingqiu
 {
     NSString *Str1 = [[NSString alloc]init];

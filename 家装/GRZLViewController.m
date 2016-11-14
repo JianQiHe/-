@@ -20,6 +20,7 @@
     UITextField *user;
     NSString *type;
     UITextField *password;
+    NSString *urlStr;
 
 }
 
@@ -263,6 +264,7 @@
 }
 
 #pragma mark -----------------登录点击事件-----------------------
+#pragma mark- 登录
 -(void)denglu
 {
     
@@ -273,69 +275,90 @@
     
     if (Str1.length == 11) {
         type = @"1";
+        [self loginByPhone];
+
     }else{
         type = @"0";
+        urlStr = @"http://jiazhuang.siruoit.com/index.php?api/api-login"  ;
+
     }
-    //邮箱是0  手机是1
-    NSString *Str3 = @"http://jiazhuang.siruoit.com/index.php?api/api-login"  ;
-//    NSString *st = [NSString stringWithFormat:@"%@/%@/%@/%@",Str3,type,Str1,Str2];
-    NSString *st =[NSString stringWithFormat:@"%@/%@/%@/%@",Str3,@"0",@"jg@126.com",@"123456"];
-    NSURL *url = [NSURL URLWithString:[st stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];                        // UTF－8
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
-    // 请求数据，设置成功与失败的回调函数
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSString *html = operation.responseString;
-        NSData* data=[html dataUsingEncoding:NSUTF8StringEncoding];
-        id dict=[NSJSONSerialization  JSONObjectWithData:data options:0 error:nil];
-        Mdic = dict;
-        //存入NSUserDefaults
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        [userDefaults setObject:Mdic forKey:@"User"];
-        
-//        NSLog(@"获取到的数据为123123123123：%@",dict);
-        //                NSLog(@"sss:%@",dict[@"data"][0][@"title"]);
-        
-        if ([dict[@"data"] count] != 0) {
-            [self.delegate passValue:Mdic];
-            [MBProgressHUD showSuccess:@"登录成功"];
-            [self.navigationController popViewControllerAnimated:YES];
-            self.hidesBottomBarWhenPushed = NO;
-//            NSLog(@"%@",Mdic);
-            NSString *UidStr = Mdic[@"data"][0][@"uid"];
-            NSLog(@"UidStr======%@",UidStr);
-            /**
-             *  单例
-             */
-            Danli *instance = [Danli sharedInstance];
-            instance.status = @"登录成功";
-        }else
-        {
-            
-            UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入正确的用户或密码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
-            
-            [myAlertView show];
-            
-        }
-        
-        
-        
-    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"发生错误！%@",error);
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"服务器异常" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
-        
-        [myAlertView show];
-
-    }];
-    // 加入队列
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    [queue addOperation:operation];
-    
-    
-
-    
-    
+//    //邮箱是0  手机是1  jiazhuang.siruoit.com/index.php?api/api-login/type/uname/pwd  http://jiazhuang.siruoit.com/index.php?api/api-login/1/
+//    NSString *st = [NSString stringWithFormat:@"%@/%@/%@",urlStr,Str1,Str2];
+////    NSString *st =[NSString stringWithFormat:@"%@/%@/%@/%@",Str3,@"0",@"jg@126.com",@"123456"];
+//    NSURL *url = [NSURL URLWithString:[st stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];                        // UTF－8
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+//    // 请求数据，设置成功与失败的回调函数
+//    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSString *html = operation.responseString;
+//        NSData* data=[html dataUsingEncoding:NSUTF8StringEncoding];
+//        id dict=[NSJSONSerialization  JSONObjectWithData:data options:0 error:nil];
+//        Mdic = dict;
+//        //存入NSUserDefaults
+//        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//        [userDefaults setObject:Mdic forKey:@"User"];
+//        
+////        NSLog(@"获取到的数据为123123123123：%@",dict);
+//        //                NSLog(@"sss:%@",dict[@"data"][0][@"title"]);
+//        
+//        if ([dict[@"data"] count] != 0) {
+//            [self.delegate passValue:Mdic];
+//            [MBProgressHUD showSuccess:@"登录成功"];
+//            [self.navigationController popViewControllerAnimated:YES];
+//            self.hidesBottomBarWhenPushed = NO;
+////            NSLog(@"%@",Mdic);
+//            NSString *UidStr = Mdic[@"data"][0][@"uid"];
+//            NSLog(@"UidStr======%@",UidStr);
+//            /**
+//             *  单例
+//             */
+//            Danli *instance = [Danli sharedInstance];
+//            instance.status = @"登录成功";
+//        }else
+//        {
+//            
+//            UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入正确的用户或密码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+//            
+//            [myAlertView show];
+//            
+//        }
+//        
+//        
+//        
+//    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSLog(@"发生错误！%@",error);
+//        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"服务器异常" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+//        
+//        [myAlertView show];
+//
+//    }];
+//    // 加入队列
+//    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+//    [queue addOperation:operation];
+//    
 }
+- (void)loginByPhone{
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                          password.text,@"PWD",
+                          user.text,@"PHONE",nil];
+    NSString *path = @"http://jiazhuang.siruoit.com/index.php?api/api-loginbyphone";
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    //post请求
+    [manager POST:path parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@",error.description);
+        
+    }];
+
+}
+
 //点击return 按钮 去掉
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {

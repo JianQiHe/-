@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WorkerViewController : UIViewController
-
+@property (nonatomic,strong) NSString *strType;
 @end

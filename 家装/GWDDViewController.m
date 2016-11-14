@@ -223,6 +223,10 @@
     [self wangluoqingqiu];
 }
 //
+
+#pragma mark- 商城订单
+//http://jiazhuang.siruoit.com/index.php?api/api-order/uid/all/page
+
 -(void)wangluoqingqiu
 {
     [backgroundView removeFromSuperview];//移除没有数据情况下显示的view

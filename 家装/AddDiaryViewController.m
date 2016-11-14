@@ -87,6 +87,7 @@
         field.textAlignment = NSTextAlignmentLeft;
         field.borderStyle = UITextBorderStyleNone;
 //        field.backgroundColor = [UIColor redColor];
+        field.delegate = self;
         field.textColor = [UIColor blackColor];
         field.font = [UIFont systemFontOfSize:15];
         [self.scrollview addSubview:field];
@@ -138,6 +139,7 @@
         contentField.textAlignment = NSTextAlignmentLeft;
 //        contentField.backgroundColor = [UIColor redColor];
         contentField.textColor = [UIColor blackColor];
+        contentField.delegate = self;
         contentField.font = [UIFont systemFontOfSize:15];
         [self.scrollview addSubview:contentField];
         contentField;
@@ -252,7 +254,17 @@
 //    self.descTipField.hidden = YES;
     return YES;
 }
-
+- (void)textViewDidEndEditing:(UITextView *)textView{
+    [self.view endEditing:YES];
+    
+}
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if ([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView {
     
 //    if ([self stringIsEmpty:textView.text]) {
@@ -272,6 +284,9 @@
     [self.view endEditing:YES];
 
 
+}
+- (void)closeKeyBoard{
+    [self.view endEditing:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

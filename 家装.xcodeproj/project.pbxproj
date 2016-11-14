@@ -191,9 +191,19 @@
 		97035C1F1DB9A95500533259 /* AddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97035C1E1DB9A95500533259 /* AddressTableViewCell.m */; };
 		97035C241DB9D78700533259 /* DecorationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97035C221DB9D78700533259 /* DecorationViewController.m */; };
 		97035C251DB9D78700533259 /* DecorationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97035C231DB9D78700533259 /* DecorationViewController.xib */; };
+		973261591DD456A1004BD130 /* FinanicalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 973261571DD456A1004BD130 /* FinanicalViewController.m */; };
+		9732615A1DD456A1004BD130 /* FinanicalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 973261581DD456A1004BD130 /* FinanicalViewController.xib */; };
+		9732615F1DD45FDB004BD130 /* AppoinPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9732615D1DD45FDB004BD130 /* AppoinPViewController.m */; };
+		973261601DD45FDB004BD130 /* AppoinPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9732615E1DD45FDB004BD130 /* AppoinPViewController.xib */; };
+		973261641DD46219004BD130 /* AppoinPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 973261621DD46219004BD130 /* AppoinPTableViewCell.m */; };
+		973261651DD46219004BD130 /* AppoinPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 973261631DD46219004BD130 /* AppoinPTableViewCell.xib */; };
 		977AD2171DB476A800B2B41F /* AddDiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977AD2161DB476A800B2B41F /* AddDiaryViewController.m */; };
 		977AD22C1DB4DCD900B2B41F /* CreateAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 977AD22A1DB4DCD900B2B41F /* CreateAddressViewController.m */; };
 		977AD22D1DB4DCD900B2B41F /* CreateAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 977AD22B1DB4DCD900B2B41F /* CreateAddressViewController.xib */; };
+		97C56BA01DD2C78E00223482 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C56B9E1DD2C78E00223482 /* StoreViewController.m */; };
+		97C56BA11DD2C78E00223482 /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C56B9F1DD2C78E00223482 /* StoreViewController.xib */; };
+		97E530A11DD58F5A006F79F2 /* CaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E5309F1DD58F5A006F79F2 /* CaseViewController.m */; };
+		97E530A21DD58F5A006F79F2 /* CaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97E530A01DD58F5A006F79F2 /* CaseViewController.xib */; };
 		97F3430B1DB6015B00E2435B /* RechargeMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F343091DB6015B00E2435B /* RechargeMoneyViewController.m */; };
 		97F3430C1DB6015B00E2435B /* RechargeMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97F3430A1DB6015B00E2435B /* RechargeMoneyViewController.xib */; };
 		97FF71CC1DB75F6B00389A8F /* SureOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97FF71CA1DB75F6B00389A8F /* SureOrderViewController.m */; };
@@ -547,11 +557,26 @@
 		97035C211DB9D78700533259 /* DecorationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecorationViewController.h; sourceTree = "<group>"; };
 		97035C221DB9D78700533259 /* DecorationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecorationViewController.m; sourceTree = "<group>"; };
 		97035C231DB9D78700533259 /* DecorationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DecorationViewController.xib; sourceTree = "<group>"; };
+		973261561DD456A1004BD130 /* FinanicalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanicalViewController.h; sourceTree = "<group>"; };
+		973261571DD456A1004BD130 /* FinanicalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanicalViewController.m; sourceTree = "<group>"; };
+		973261581DD456A1004BD130 /* FinanicalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinanicalViewController.xib; sourceTree = "<group>"; };
+		9732615C1DD45FDB004BD130 /* AppoinPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinPViewController.h; sourceTree = "<group>"; };
+		9732615D1DD45FDB004BD130 /* AppoinPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinPViewController.m; sourceTree = "<group>"; };
+		9732615E1DD45FDB004BD130 /* AppoinPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppoinPViewController.xib; sourceTree = "<group>"; };
+		973261611DD46219004BD130 /* AppoinPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinPTableViewCell.h; sourceTree = "<group>"; };
+		973261621DD46219004BD130 /* AppoinPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinPTableViewCell.m; sourceTree = "<group>"; };
+		973261631DD46219004BD130 /* AppoinPTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppoinPTableViewCell.xib; sourceTree = "<group>"; };
 		977AD2151DB476A800B2B41F /* AddDiaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDiaryViewController.h; sourceTree = "<group>"; };
 		977AD2161DB476A800B2B41F /* AddDiaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDiaryViewController.m; sourceTree = "<group>"; };
 		977AD2291DB4DCD900B2B41F /* CreateAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAddressViewController.h; sourceTree = "<group>"; };
 		977AD22A1DB4DCD900B2B41F /* CreateAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAddressViewController.m; sourceTree = "<group>"; };
 		977AD22B1DB4DCD900B2B41F /* CreateAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAddressViewController.xib; sourceTree = "<group>"; };
+		97C56B9D1DD2C78E00223482 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
+		97C56B9E1DD2C78E00223482 /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
+		97C56B9F1DD2C78E00223482 /* StoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreViewController.xib; sourceTree = "<group>"; };
+		97E5309E1DD58F5A006F79F2 /* CaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseViewController.h; sourceTree = "<group>"; };
+		97E5309F1DD58F5A006F79F2 /* CaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaseViewController.m; sourceTree = "<group>"; };
+		97E530A01DD58F5A006F79F2 /* CaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaseViewController.xib; sourceTree = "<group>"; };
 		97F343081DB6015B00E2435B /* RechargeMoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeMoneyViewController.h; sourceTree = "<group>"; };
 		97F343091DB6015B00E2435B /* RechargeMoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeMoneyViewController.m; sourceTree = "<group>"; };
 		97F3430A1DB6015B00E2435B /* RechargeMoneyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RechargeMoneyViewController.xib; sourceTree = "<group>"; };
@@ -785,6 +810,7 @@
 			children = (
 				04AC80C11D1B7C3800B7375B /* SJFWViewController.h */,
 				04AC80C21D1B7C3800B7375B /* SJFWViewController.m */,
+				97E5309D1DD58E9C006F79F2 /* 案例 */,
 				04CD5AF91D54683E004096BA /* 小区 */,
 				04CD5AF81D546713004096BA /* 工人 */,
 				0483FFC01D3CC38F00942320 /* 公司 */,
@@ -1055,6 +1081,7 @@
 				0482BC7F1CE5CE8E00BB1956 /* 收货地址 */,
 				0482BC8F1CE7011A00BB1956 /* 我的问答 */,
 				0482BC901CE7012500BB1956 /* 我的装修保 */,
+				97C56B9C1DD2C70E00223482 /* 商铺管理 */,
 				0482BC911CE7013500BB1956 /* 设置 */,
 			);
 			name = "我的";
@@ -1331,6 +1358,29 @@
 			name = "装修公司";
 			sourceTree = "<group>";
 		};
+		973261551DD45664004BD130 /* 财务管理 */ = {
+			isa = PBXGroup;
+			children = (
+				973261561DD456A1004BD130 /* FinanicalViewController.h */,
+				973261571DD456A1004BD130 /* FinanicalViewController.m */,
+				973261581DD456A1004BD130 /* FinanicalViewController.xib */,
+			);
+			name = "财务管理";
+			sourceTree = "<group>";
+		};
+		9732615B1DD45E24004BD130 /* 预约管理 */ = {
+			isa = PBXGroup;
+			children = (
+				9732615C1DD45FDB004BD130 /* AppoinPViewController.h */,
+				9732615D1DD45FDB004BD130 /* AppoinPViewController.m */,
+				9732615E1DD45FDB004BD130 /* AppoinPViewController.xib */,
+				973261611DD46219004BD130 /* AppoinPTableViewCell.h */,
+				973261621DD46219004BD130 /* AppoinPTableViewCell.m */,
+				973261631DD46219004BD130 /* AppoinPTableViewCell.xib */,
+			);
+			name = "预约管理";
+			sourceTree = "<group>";
+		};
 		977AD2141DB4769400B2B41F /* 添加日记 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1348,6 +1398,28 @@
 				977AD22B1DB4DCD900B2B41F /* CreateAddressViewController.xib */,
 			);
 			name = "创建地址";
+			sourceTree = "<group>";
+		};
+		97C56B9C1DD2C70E00223482 /* 商铺管理 */ = {
+			isa = PBXGroup;
+			children = (
+				97C56B9D1DD2C78E00223482 /* StoreViewController.h */,
+				97C56B9E1DD2C78E00223482 /* StoreViewController.m */,
+				97C56B9F1DD2C78E00223482 /* StoreViewController.xib */,
+				973261551DD45664004BD130 /* 财务管理 */,
+				9732615B1DD45E24004BD130 /* 预约管理 */,
+			);
+			name = "商铺管理";
+			sourceTree = "<group>";
+		};
+		97E5309D1DD58E9C006F79F2 /* 案例 */ = {
+			isa = PBXGroup;
+			children = (
+				97E5309E1DD58F5A006F79F2 /* CaseViewController.h */,
+				97E5309F1DD58F5A006F79F2 /* CaseViewController.m */,
+				97E530A01DD58F5A006F79F2 /* CaseViewController.xib */,
+			);
+			name = "案例";
 			sourceTree = "<group>";
 		};
 		97FF71C81DB75D5A00389A8F /* 确认订单 */ = {
@@ -1486,6 +1558,7 @@
 				048AD9071CD871F600C1B641 /* LaunchScreen.storyboard in Resources */,
 				97FF71CD1DB75F6B00389A8F /* SureOrderViewController.xib in Resources */,
 				04B998841CF5499500255F62 /* cart_cutBtn_nomal@2x.png in Resources */,
+				973261651DD46219004BD130 /* AppoinPTableViewCell.xib in Resources */,
 				04B9989E1CF582A400255F62 /* SPXQ1.jpg in Resources */,
 				04B998911CF5706600255F62 /* touxiang.jpg in Resources */,
 				0472D4991D5210560044C43E /* 橙色.png in Resources */,
@@ -1494,6 +1567,9 @@
 				04B9989C1CF582A400255F62 /* SPXQ3.jpg in Resources */,
 				662EE04B1DB11A0600A76C70 /* TZImagePickerController.bundle in Resources */,
 				046D7A1B1D38E866009E718A /* weixing.png in Resources */,
+				973261601DD45FDB004BD130 /* AppoinPViewController.xib in Resources */,
+				97E530A21DD58F5A006F79F2 /* CaseViewController.xib in Resources */,
+				97C56BA11DD2C78E00223482 /* StoreViewController.xib in Resources */,
 				04B998811CF5499500255F62 /* cart_addBtn_highlight@2x.png in Resources */,
 				049377801D55E73700E0E601 /* 你是脑残.png in Resources */,
 				04B80AE41D30FAF000FEED1F /* 箭头.png in Resources */,
@@ -1501,6 +1577,7 @@
 				04B80AC61D2E280D00FEED1F /* 商铺.png in Resources */,
 				04BE58991D0189E7005316D6 /* 测试.png in Resources */,
 				046D79731D38A8AC009E718A /* 哭.png in Resources */,
+				9732615A1DD456A1004BD130 /* FinanicalViewController.xib in Resources */,
 				04C6F1E81D2B597000C28A07 /* 订单.png in Resources */,
 				04B9988F1CF568ED00255F62 /* shangjiatupian.jpg in Resources */,
 				046D79691D37410F009E718A /* MJRefresh.bundle in Resources */,
@@ -1649,6 +1726,7 @@
 				0482BC8E1CE6BB0700BB1956 /* GWDDViewController.m in Sources */,
 				04B80ABE1D2E1CB400FEED1F /* GWDDTableViewCell.m in Sources */,
 				04CD5AF71D543712004096BA /* DesignCollectionHeaderView.m in Sources */,
+				9732615F1DD45FDB004BD130 /* AppoinPViewController.m in Sources */,
 				662EE04A1DB11A0600A76C70 /* TZImageManager.m in Sources */,
 				046D79711D3887CD009E718A /* ShangjiaTableViewCell.m in Sources */,
 				04BF50E81D24FD8C00CD595D /* YHHDViewController.m in Sources */,
@@ -1674,6 +1752,7 @@
 				04F5C96A1D4F4C5C001EC3F4 /* GroupShopDetailViewController.m in Sources */,
 				046D79601D37410F009E718A /* MJRefreshAutoGifFooter.m in Sources */,
 				046D796A1D37410F009E718A /* MJRefreshConst.m in Sources */,
+				97E530A11DD58F5A006F79F2 /* CaseViewController.m in Sources */,
 				0475CCC31CF004DC009625C6 /* TPXQViewController.m in Sources */,
 				04C93F7A1CDC5DEC00B39146 /* MASConstraintMaker.m in Sources */,
 				04B80AD41D30A8E500FEED1F /* DesignerTableViewCell.m in Sources */,
@@ -1691,6 +1770,7 @@
 				04C93F7F1CDC5DEC00B39146 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				04AC80C01D191A0900B7375B /* ZXBViewController.m in Sources */,
 				048783A81D35D7310033D05F /* MoreProductCollectionViewCell.m in Sources */,
+				973261641DD46219004BD130 /* AppoinPTableViewCell.m in Sources */,
 				046D795F1D37410F009E718A /* MJRefreshHeader.m in Sources */,
 				04D747011D3E4FB700CF72C8 /* Danli.m in Sources */,
 				04BF50E21D24C7A200CD595D /* ShopClassCollectionViewCell.m in Sources */,
@@ -1701,6 +1781,7 @@
 				046D795E1D37410F009E718A /* MJRefreshFooter.m in Sources */,
 				04CD5AF41D5431DA004096BA /* DesignCollectionViewCell.m in Sources */,
 				048AD93A1CD882BE00C1B641 /* ShopViewController.m in Sources */,
+				97C56BA01DD2C78E00223482 /* StoreViewController.m in Sources */,
 				0437E4821D34B58F00EF6EEC /* MoreProductViewController.m in Sources */,
 				04C6F1E61D2A674F00C28A07 /* SZTableViewCell.m in Sources */,
 				046D79641D37410F009E718A /* MJRefreshBackNormalFooter.m in Sources */,
@@ -1717,6 +1798,7 @@
 				046D79661D37410F009E718A /* MJRefreshGifHeader.m in Sources */,
 				04AC80BD1D1919FD00B7375B /* MFLFViewController.m in Sources */,
 				046D796C1D37410F009E718A /* UIScrollView+MJExtension.m in Sources */,
+				973261591DD456A1004BD130 /* FinanicalViewController.m in Sources */,
 				04E75B411D473390005013CA /* FirstProductdetail.m in Sources */,
 				04C93F7D1CDC5DEC00B39146 /* MASViewConstraint.m in Sources */,
 				04AC80B11D1918AF00B7375B /* MFZBViewController.m in Sources */,

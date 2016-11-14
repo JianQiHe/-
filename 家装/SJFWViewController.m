@@ -13,6 +13,8 @@
 #import "ZXGSViewController.h"
 #import "XiaoquViewController.h"
 #import "GroupShopViewController.h"
+#import "CaseViewController.h"
+
 @interface SJFWViewController ()<UIScrollViewDelegate>
 
 @end
@@ -112,8 +114,7 @@
     case1.layer.cornerRadius = 3;
     case1.layer.borderWidth = 1;
     case1.layer.borderColor=[UIColor lightGrayColor].CGColor;
-    
-    
+    [case1 addTarget:self action:@selector(showCase) forControlEvents:UIControlEventTouchUpInside];
     
     
  //小区
@@ -130,15 +131,15 @@
     
     
   //工地
-    UIButton *gongdi = [UIButton buttonWithType:UIButtonTypeCustom];
-    gongdi.backgroundColor = [UIColor whiteColor];
-    [scr addSubview:gongdi];
-    [gongdi setTitle:@"工地" forState:UIControlStateNormal];
-    [gongdi setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    gongdi.layer.cornerRadius = 3;
-    gongdi.layer.borderWidth = 1;
-    gongdi.layer.borderColor=[UIColor lightGrayColor].CGColor;
-    [gongdi addTarget:self action:@selector(togongdi) forControlEvents:UIControlEventTouchUpInside];
+//    UIButton *gongdi = [UIButton buttonWithType:UIButtonTypeCustom];
+//    gongdi.backgroundColor = [UIColor whiteColor];
+//    [scr addSubview:gongdi];
+//    [gongdi setTitle:@"工地" forState:UIControlStateNormal];
+//    [gongdi setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    gongdi.layer.cornerRadius = 3;
+//    gongdi.layer.borderWidth = 1;
+//    gongdi.layer.borderColor=[UIColor lightGrayColor].CGColor;
+//    [gongdi addTarget:self action:@selector(togongdi) forControlEvents:UIControlEventTouchUpInside];
 
     
     
@@ -220,43 +221,77 @@
     
     
     //第三行
-    
     [xiaoqu mas_makeConstraints:^(MASConstraintMaker *make){
         make.left.equalTo(self.view.mas_left).offset(15);
         make.top.equalTo(design.mas_bottom).offset(20);
         make.height.equalTo(xiaoqu.mas_width);
-        make.width.equalTo(gongdi.mas_width);
+        make.width.equalTo(worker.mas_width);
         //        make.width.equalTo(@50);
         //        make.height.equalTo(@50);
-    }];
-    
-    [gongdi mas_makeConstraints:^(MASConstraintMaker *make){
-        make.left.equalTo(xiaoqu.mas_right).offset(20);
-        make.top.equalTo(xiaoqu.mas_top);
-        make.height.equalTo(xiaoqu.mas_height);
-        make.width.equalTo(tuanzhuang.mas_width);
-        
     }];
     
     [tuanzhuang mas_makeConstraints:^(MASConstraintMaker *make){
-        make.left.equalTo(gongdi.mas_right).offset(20);
-        make.top.equalTo(gongdi.mas_top);
-        make.right.equalTo(self.view.mas_right).offset(-15);
-        make.height.equalTo(gongdi.mas_height);
+        make.left.equalTo(xiaoqu.mas_right).offset(20);
+        make.top.equalTo(xiaoqu.mas_top);
+        make.height.equalTo(xiaoqu.mas_height);
+        make.width.equalTo(study.mas_width);
+        
     }];
-    
-    
-    
-    //第四行
     
     [study mas_makeConstraints:^(MASConstraintMaker *make){
-        make.left.equalTo(self.view.mas_left).offset(15);
-        make.top.equalTo(xiaoqu.mas_bottom).offset(20);
-        make.height.equalTo(xiaoqu.mas_width);
-        make.width.equalTo(xiaoqu.mas_width);
-        //        make.width.equalTo(@50);
-        //        make.height.equalTo(@50);
+        make.left.equalTo(tuanzhuang.mas_right).offset(20);
+        make.top.equalTo(tuanzhuang.mas_top);
+        make.right.equalTo(self.view.mas_right).offset(-15);
+        make.height.equalTo(tuanzhuang.mas_height);
     }];
+    
+
+    
+//    [xiaoqu mas_makeConstraints:^(MASConstraintMaker *make){
+//        make.left.equalTo(self.view.mas_left).offset(15);
+//        make.top.equalTo(design.mas_bottom).offset(20);
+//        make.height.equalTo(xiaoqu.mas_width);
+//        make.width.equalTo(tuanzhuang.mas_width);
+////                make.width.equalTo(@50);
+////                make.height.equalTo(@50);
+//    }];
+    
+//    [gongdi mas_makeConstraints:^(MASConstraintMaker *make){
+//        make.left.equalTo(xiaoqu.mas_right).offset(20);
+//        make.top.equalTo(xiaoqu.mas_top);
+//        make.height.equalTo(xiaoqu.mas_height);
+//        make.width.equalTo(tuanzhuang.mas_width);
+//        
+//    }];
+//    [tuanzhuang mas_makeConstraints:^(MASConstraintMaker *make){
+//        make.left.equalTo(xiaoqu.mas_right).offset(20);
+//        make.top.equalTo(xiaoqu.mas_top);
+//        make.height.equalTo(xiaoqu.mas_height);
+//        make.width.equalTo(tuanzhuang.mas_width);
+//        
+//    }];
+//    
+//
+//    
+//    [study mas_makeConstraints:^(MASConstraintMaker *make){
+//        make.left.equalTo(tuanzhuang.mas_right).offset(20);
+//        make.top.equalTo(tuanzhuang.mas_top);
+//        make.right.equalTo(self.view.mas_right).offset(-15);
+//        make.height.equalTo(tuanzhuang.mas_height);
+//    }];
+    
+   
+    
+    //第四行
+//    
+//    [study mas_makeConstraints:^(MASConstraintMaker *make){
+//        make.left.equalTo(self.view.mas_left).offset(15);
+//        make.top.equalTo(xiaoqu.mas_bottom).offset(20);
+//        make.height.equalTo(xiaoqu.mas_width);
+//        make.width.equalTo(xiaoqu.mas_width);
+//        //        make.width.equalTo(@50);
+//        //        make.height.equalTo(@50);
+//    }];
     // Do any additional setup after loading the view.
 }
 #pragma mark -----------------方法-----------------------
@@ -290,6 +325,13 @@
     self.hidesBottomBarWhenPushed = YES;
     ZXGSViewController *view = [[ZXGSViewController alloc]init];
     [self.navigationController pushViewController:view animated:YES];
+}
+- (void)showCase{
+    self.hidesBottomBarWhenPushed = YES;
+    WorkerViewController *view = [[WorkerViewController alloc]init];
+    view.strType = @"案例";
+    [self.navigationController pushViewController:view animated:YES];
+
 }
 -(void)toxiaoqu
 {

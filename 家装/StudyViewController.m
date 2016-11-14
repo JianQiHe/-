@@ -18,7 +18,12 @@
     [super viewDidLoad];
     [self setTitle:@"学装修"];
     UIWebView * webView = [[UIWebView alloc]initWithFrame:self.view.frame];
-    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://jiazhuang.siruoit.com/index.php?article.html"]];
+
+    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://jiazhuang.siruoit.com/index.php?article-detail-144.html"]];
+
+    //    jiazhuang.siruoit.com/index.php?api/api-blockitem43/   http://jiazhuang.siruoit.com/index.php?article-detail-118.html
+//    http://jiazhuang.siruoit.com/index.php?article.html 
+    
     [self.view addSubview:webView];
     [webView loadRequest:request];
 

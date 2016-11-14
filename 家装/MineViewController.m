@@ -20,6 +20,7 @@
 #import "GRZLViewController.h"
 #import "LoginsuccessViewController.h"
 #import "MineTableViewCell.h"
+#import "StoreViewController.h"
 
 #import "Danli.h"
 #import "MBProgressHUD+NJ.h"
@@ -540,7 +541,10 @@
     {
         cell = [[MineTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    //,@"商铺管理",@"公司管理",@"工长管理",@"技工管理",@"设计师管理"
     NSArray *arr = @[@"我的装修",@"我的问答",@"我的装修保",@"设置"];
+    
+    //,@"wodezhuangxiubao",@"wodezhuangxiubao",@"wodezhuangxiubao",@"wodezhuangxiubao",@"wodezhuangxiubao"
     NSArray *arr2 = @[@"wodezhuangxiu",@"wodewenda",@"wodezhuangxiubao",@"shezhi"];
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleDefault;
@@ -553,9 +557,9 @@
 {
 
     //HHH
-    _instance.status = @"登录成功";
+//    _instance.status = @"登录成功";
     
-    if (indexPath.row ==0)
+        if (indexPath.row ==0)
     {
         
         if (![_instance.status isEqualToString:@"登录成功"])
@@ -597,19 +601,79 @@
         }
         
     }
-    else
+//    else if (indexPath.row==3)
+//    {
+//        if(![_instance.status isEqualToString:@"登录成功"])
+//        {
+//            [MBProgressHUD showError:@"未登录!"];
+//        }else
+//        {
+//        StoreViewController *controller = [[StoreViewController alloc] initWithNibName:@"StoreViewController" bundle:nil];
+//        controller.navigationItem.title = @"商铺管理";
+//        controller.hidesBottomBarWhenPushed = YES;
+//        [self.navigationController pushViewController:controller animated:YES];
+//        }
+//    }
+//    else if (indexPath.row==4)
+//    {
+//        if(![_instance.status isEqualToString:@"登录成功"])
+//        {
+//            [MBProgressHUD showError:@"未登录!"];
+//        }else
+//        {
+//            SZViewController *view = [[SZViewController alloc]init];
+//            view.hidesBottomBarWhenPushed = YES;
+//            [self.navigationController pushViewController:view animated:YES];
+//        }
+//    }
+//    else if (indexPath.row==5)
+//    {
+//        if(![_instance.status isEqualToString:@"登录成功"])
+//        {
+//            [MBProgressHUD showError:@"未登录!"];
+//        }else
+//        {
+//            SZViewController *view = [[SZViewController alloc]init];
+//            view.hidesBottomBarWhenPushed = YES;
+//            [self.navigationController pushViewController:view animated:YES];
+//        }
+//    }
+//    else if (indexPath.row==6)
+//    {
+//        if(![_instance.status isEqualToString:@"登录成功"])
+//        {
+//            [MBProgressHUD showError:@"未登录!"];
+//        }else
+//        {
+//            SZViewController *view = [[SZViewController alloc]init];
+//            view.hidesBottomBarWhenPushed = YES;
+//            [self.navigationController pushViewController:view animated:YES];
+//        }
+//    }
+//    else if (indexPath.row==7)
+//    {
+//        if(![_instance.status isEqualToString:@"登录成功"])
+//        {
+//            [MBProgressHUD showError:@"未登录!"];
+//        }else
+//        {
+//            SZViewController *view = [[SZViewController alloc]init];
+//            view.hidesBottomBarWhenPushed = YES;
+//            [self.navigationController pushViewController:view animated:YES];
+//        }
+//    }
+    else if (indexPath.row==3)
     {
         if(![_instance.status isEqualToString:@"登录成功"])
         {
             [MBProgressHUD showError:@"未登录!"];
         }else
         {
-        SZViewController *view = [[SZViewController alloc]init];
-        view.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:view animated:YES];
+            SZViewController *view = [[SZViewController alloc]init];
+            view.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:view animated:YES];
         }
     }
-
 }
 
 - (void)didReceiveMemoryWarning {

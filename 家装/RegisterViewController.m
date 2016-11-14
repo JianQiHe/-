@@ -342,6 +342,9 @@
     [PassWordAgain resignFirstResponder];
     return YES;
 }
+
+#pragma mark-
+#pragma mark- 手机注册
 -(void)RegisterSuccess
 {
 

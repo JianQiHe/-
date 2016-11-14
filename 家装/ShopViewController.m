@@ -469,7 +469,9 @@
         pc.currentPage = (sc.contentOffset.x+sc.frame.size.width/2)/sc.frame.size.width;
     }
 }
-#pragma mark -----------------Shoplist-----------------------
+
+
+#pragma mark -商家分类
 -(void)Shoplist
 {
     

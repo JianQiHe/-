@@ -284,6 +284,8 @@
     
     [myAlertView show];
 }
+
+
 -(void)wangluoqingqiu
 {
         NSString *str=[NSString stringWithFormat:@"http://jiazhuang.siruoit.com/index.php?api/api-gs-0-0-0-0-0-%d",k];

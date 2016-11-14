@@ -60,7 +60,7 @@
     
     
     
-    
+ //我的日记
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *Dic = [userDefaults objectForKey:@"User"];
     UidStr = Dic[@"data"][0][@"uid"];
