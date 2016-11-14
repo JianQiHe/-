@@ -72,6 +72,8 @@
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
     // 请求数据，设置成功与失败的回调函数
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
         NSString *html = operation.responseString;
         data=[html dataUsingEncoding:NSUTF8StringEncoding];
         dict = [NSMutableDictionary dictionaryWithDictionary:[NSJSONSerialization  JSONObjectWithData:data options:0 error:nil]];
@@ -91,7 +93,7 @@
             
             [arr addObject:dateString];
 
-           
+    
         }
         [tbView reloadData];
 

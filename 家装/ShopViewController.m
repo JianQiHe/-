@@ -292,131 +292,135 @@
         };
         
 
-        if ([datas[indexPath.row][@"data"] count] != 0)
-        {
+        if (datas.count > indexPath.row) {
             
-            
-            
-            NSString *imagV1Str1 = [NSString stringWithFormat:@"http://jiazhuang.siruoit.com/attachs/%@",datas[indexPath.row][@"data"][0][@"photo"]];
-            [Cell.imgV1 sd_setImageWithURL:[NSURL URLWithString:imagV1Str1] placeholderImage:[UIImage imageNamed:@"imagV1"]];
-            Cell.imgV1.userInteractionEnabled = YES;
-            __weak typeof(self) self1 = self;
-            Cell.imgV1Click = ^(ShopScrollViewTableViewCell *cell){
+            if ([datas[indexPath.row][@"data"] count] != 0)
+            {
                 
-                NSIndexPath *row = [tableView indexPathForCell:cell];
-                NSLog(@"row====%ld",(long)row.row);
-                FirstProductdetail *vc = [[FirstProductdetail alloc] init];
-                vc.Cat_Str = dict[@"data"][row.row][@"cat_id"];
-                vc.Number = [NSString stringWithFormat:@"0"];
-                vc.hidesBottomBarWhenPushed = YES;
-                [self1.navigationController pushViewController:vc animated:YES];
-            };
-            
-            
-            
-            
-            NSString *imagV1Str2 = [NSString stringWithFormat:@"http://jiazhuang.siruoit.com/attachs/%@",datas[indexPath.row][@"data"][1][@"photo"]];
-            [Cell.imgV2 sd_setImageWithURL:[NSURL URLWithString:imagV1Str2] placeholderImage:[UIImage imageNamed:@"imagV2"]];
-            Cell.imgV2.userInteractionEnabled = YES;
-            __weak typeof(self) self2 = self;
-            Cell.imgV2Click = ^(ShopScrollViewTableViewCell *cell){
                 
-                NSIndexPath *row = [tableView indexPathForCell:cell];
-                NSLog(@"row====%ld",(long)row.row);
-                FirstProductdetail *vc = [[FirstProductdetail alloc] init];
-                vc.Cat_Str = dict[@"data"][row.row][@"cat_id"];
-                vc.Number = [NSString stringWithFormat:@"1"];
-                vc.hidesBottomBarWhenPushed = YES;
-                [self2.navigationController pushViewController:vc animated:YES];
-            };
-            
-            
-            
-            NSString *imagV1Str3 = [NSString stringWithFormat:@"http://jiazhuang.siruoit.com/attachs/%@",datas[indexPath.row][@"data"][2][@"photo"]];
-            [Cell.imgV3 sd_setImageWithURL:[NSURL URLWithString:imagV1Str3] placeholderImage:[UIImage imageNamed:@"imagV3"]];
-            Cell.imgV3.userInteractionEnabled = YES;
-            __weak typeof(self) self3 = self;
-            Cell.imgV3Click = ^(ShopScrollViewTableViewCell *cell){
                 
-                NSIndexPath *row = [tableView indexPathForCell:cell];
-                NSLog(@"row====%ld",(long)row.row);
-                FirstProductdetail *vc = [[FirstProductdetail alloc] init];
-                vc.Cat_Str = dict[@"data"][row.row][@"cat_id"];
-                vc.Number = [NSString stringWithFormat:@"2"];
-                vc.hidesBottomBarWhenPushed = YES;
-                [self3.navigationController pushViewController:vc animated:YES];
-            };
-            
-            
-            
-            
-            NSString *imagV1Str4 = [NSString stringWithFormat:@"http://jiazhuang.siruoit.com/attachs/%@",datas[indexPath.row][@"data"][3][@"photo"]];
-            [Cell.imgV4 sd_setImageWithURL:[NSURL URLWithString:imagV1Str4] placeholderImage:[UIImage imageNamed:@"imagV4"]];
-            Cell.imgV4.userInteractionEnabled = YES;
-            __weak typeof(self) self4 = self;
-            Cell.imgV4Click = ^(ShopScrollViewTableViewCell *cell){
+                NSString *imagV1Str1 = [NSString stringWithFormat:@"http://jiazhuang.siruoit.com/attachs/%@",datas[indexPath.row][@"data"][0][@"photo"]];
+                [Cell.imgV1 sd_setImageWithURL:[NSURL URLWithString:imagV1Str1] placeholderImage:[UIImage imageNamed:@"imagV1"]];
+                Cell.imgV1.userInteractionEnabled = YES;
+                __weak typeof(self) self1 = self;
+                Cell.imgV1Click = ^(ShopScrollViewTableViewCell *cell){
+                    
+                    NSIndexPath *row = [tableView indexPathForCell:cell];
+                    NSLog(@"row====%ld",(long)row.row);
+                    FirstProductdetail *vc = [[FirstProductdetail alloc] init];
+                    vc.Cat_Str = dict[@"data"][row.row][@"cat_id"];
+                    vc.Number = [NSString stringWithFormat:@"0"];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self1.navigationController pushViewController:vc animated:YES];
+                };
                 
-                NSIndexPath *row = [tableView indexPathForCell:cell];
-                NSLog(@"row====%ld",(long)row.row);
-                FirstProductdetail *vc = [[FirstProductdetail alloc] init];
-                vc.Cat_Str = dict[@"data"][row.row][@"cat_id"];
-                vc.Number = [NSString stringWithFormat:@"3"];
-                vc.hidesBottomBarWhenPushed = YES;
-                [self4.navigationController pushViewController:vc animated:YES];
-            };
-            
-            
-            
-            
-            
-            
-            Cell.lab1.text = datas[indexPath.row][@"data"][0][@"title"];
-            Cell.lab2.text = datas[indexPath.row][@"data"][1][@"title"];
-            Cell.lab3.text = datas[indexPath.row][@"data"][2][@"title"];
-            Cell.lab4.text = datas[indexPath.row][@"data"][3][@"title"];
-            
-            NSString *PriceStr1 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][0][@"price"]];
-            Cell.Pricelab1.text =PriceStr1;
-            
-            NSString *Market_Price1 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][0][@"market_price"]];
-            Cell.market_price1.text =Market_Price1 ;
-            
-            
-            
-            NSString *PriceStr2 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][1][@"price"]];
-            Cell.Pricelab2.text =PriceStr2;
-            
-            NSString *Market_Price2 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][1][@"market_price"]];
-            Cell.market_price2.text =Market_Price2 ;
-            
-            
-            
-            NSString *PriceStr3 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][2][@"price"]];
-            Cell.Pricelab3.text =PriceStr3;
-            
-            NSString *Market_Price3 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][2][@"market_price"]];
-            Cell.market_price3.text =Market_Price3 ;
-            
-            
-            
-            NSString *PriceStr4 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][3][@"price"]];
-            Cell.Pricelab4.text =PriceStr4;
-            
-            NSString *Market_Price4 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][3][@"market_price"]];
-            Cell.market_price4.text =Market_Price4 ;
-
-        }else{
- 
-            NSString *imagV1Str = @"http://jiazhuang.siruoit.com/attachs/default/product_photo.jpg_thumb.jpg";
-            [Cell.imgV1 sd_setImageWithURL:[NSURL URLWithString:imagV1Str] placeholderImage:[UIImage imageNamed:@"imagV1"]];
-            
-            [Cell.imgV2 sd_setImageWithURL:[NSURL URLWithString:imagV1Str] placeholderImage:[UIImage imageNamed:@"imagV2"]];
-            
-            [Cell.imgV3 sd_setImageWithURL:[NSURL URLWithString:imagV1Str] placeholderImage:[UIImage imageNamed:@"imagV3"]];
-            
-            [Cell.imgV4 sd_setImageWithURL:[NSURL URLWithString:imagV1Str] placeholderImage:[UIImage imageNamed:@"imagV4"]];
-
+                
+                
+                
+                NSString *imagV1Str2 = [NSString stringWithFormat:@"http://jiazhuang.siruoit.com/attachs/%@",datas[indexPath.row][@"data"][1][@"photo"]];
+                [Cell.imgV2 sd_setImageWithURL:[NSURL URLWithString:imagV1Str2] placeholderImage:[UIImage imageNamed:@"imagV2"]];
+                Cell.imgV2.userInteractionEnabled = YES;
+                __weak typeof(self) self2 = self;
+                Cell.imgV2Click = ^(ShopScrollViewTableViewCell *cell){
+                    
+                    NSIndexPath *row = [tableView indexPathForCell:cell];
+                    NSLog(@"row====%ld",(long)row.row);
+                    FirstProductdetail *vc = [[FirstProductdetail alloc] init];
+                    vc.Cat_Str = dict[@"data"][row.row][@"cat_id"];
+                    vc.Number = [NSString stringWithFormat:@"1"];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self2.navigationController pushViewController:vc animated:YES];
+                };
+                
+                
+                
+                NSString *imagV1Str3 = [NSString stringWithFormat:@"http://jiazhuang.siruoit.com/attachs/%@",datas[indexPath.row][@"data"][2][@"photo"]];
+                [Cell.imgV3 sd_setImageWithURL:[NSURL URLWithString:imagV1Str3] placeholderImage:[UIImage imageNamed:@"imagV3"]];
+                Cell.imgV3.userInteractionEnabled = YES;
+                __weak typeof(self) self3 = self;
+                Cell.imgV3Click = ^(ShopScrollViewTableViewCell *cell){
+                    
+                    NSIndexPath *row = [tableView indexPathForCell:cell];
+                    NSLog(@"row====%ld",(long)row.row);
+                    FirstProductdetail *vc = [[FirstProductdetail alloc] init];
+                    vc.Cat_Str = dict[@"data"][row.row][@"cat_id"];
+                    vc.Number = [NSString stringWithFormat:@"2"];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self3.navigationController pushViewController:vc animated:YES];
+                };
+                
+                
+                
+                
+                NSString *imagV1Str4 = [NSString stringWithFormat:@"http://jiazhuang.siruoit.com/attachs/%@",datas[indexPath.row][@"data"][3][@"photo"]];
+                [Cell.imgV4 sd_setImageWithURL:[NSURL URLWithString:imagV1Str4] placeholderImage:[UIImage imageNamed:@"imagV4"]];
+                Cell.imgV4.userInteractionEnabled = YES;
+                __weak typeof(self) self4 = self;
+                Cell.imgV4Click = ^(ShopScrollViewTableViewCell *cell){
+                    
+                    NSIndexPath *row = [tableView indexPathForCell:cell];
+                    NSLog(@"row====%ld",(long)row.row);
+                    FirstProductdetail *vc = [[FirstProductdetail alloc] init];
+                    vc.Cat_Str = dict[@"data"][row.row][@"cat_id"];
+                    vc.Number = [NSString stringWithFormat:@"3"];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self4.navigationController pushViewController:vc animated:YES];
+                };
+                
+                
+                
+                
+                
+                
+                Cell.lab1.text = datas[indexPath.row][@"data"][0][@"title"];
+                Cell.lab2.text = datas[indexPath.row][@"data"][1][@"title"];
+                Cell.lab3.text = datas[indexPath.row][@"data"][2][@"title"];
+                Cell.lab4.text = datas[indexPath.row][@"data"][3][@"title"];
+                
+                NSString *PriceStr1 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][0][@"price"]];
+                Cell.Pricelab1.text =PriceStr1;
+                
+                NSString *Market_Price1 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][0][@"market_price"]];
+                Cell.market_price1.text =Market_Price1 ;
+                
+                
+                
+                NSString *PriceStr2 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][1][@"price"]];
+                Cell.Pricelab2.text =PriceStr2;
+                
+                NSString *Market_Price2 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][1][@"market_price"]];
+                Cell.market_price2.text =Market_Price2 ;
+                
+                
+                
+                NSString *PriceStr3 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][2][@"price"]];
+                Cell.Pricelab3.text =PriceStr3;
+                
+                NSString *Market_Price3 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][2][@"market_price"]];
+                Cell.market_price3.text =Market_Price3 ;
+                
+                
+                
+                NSString *PriceStr4 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][3][@"price"]];
+                Cell.Pricelab4.text =PriceStr4;
+                
+                NSString *Market_Price4 = [NSString stringWithFormat:@"¥%@",datas[indexPath.row][@"data"][3][@"market_price"]];
+                Cell.market_price4.text =Market_Price4 ;
+                
+            }else{
+                
+                NSString *imagV1Str = @"http://jiazhuang.siruoit.com/attachs/default/product_photo.jpg_thumb.jpg";
+                [Cell.imgV1 sd_setImageWithURL:[NSURL URLWithString:imagV1Str] placeholderImage:[UIImage imageNamed:@"imagV1"]];
+                
+                [Cell.imgV2 sd_setImageWithURL:[NSURL URLWithString:imagV1Str] placeholderImage:[UIImage imageNamed:@"imagV2"]];
+                
+                [Cell.imgV3 sd_setImageWithURL:[NSURL URLWithString:imagV1Str] placeholderImage:[UIImage imageNamed:@"imagV3"]];
+                
+                [Cell.imgV4 sd_setImageWithURL:[NSURL URLWithString:imagV1Str] placeholderImage:[UIImage imageNamed:@"imagV4"]];
+                
+            }
         }
+        
             return Cell;
         }
     }

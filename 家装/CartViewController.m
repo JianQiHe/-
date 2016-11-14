@@ -108,6 +108,7 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = RGBCOLOR(245, 246, 248);
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     dataArray = [[NSMutableArray alloc]init];
     selectGoods = [[NSMutableArray alloc]init];
@@ -236,7 +237,7 @@
         UIView *vi = [self.view viewWithTag:TAG_BACKGROUNDVIEW];
         [vi removeFromSuperview];
        
-        myTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT -64 -50) style:UITableViewStylePlain];
+        myTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT -64 -50 - 49) style:UITableViewStylePlain];
         myTableView.delegate = self;
         myTableView.dataSource = self;
         myTableView.rowHeight = 100;

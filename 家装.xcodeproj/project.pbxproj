@@ -187,6 +187,7 @@
 		662EE04F1DB11A0600A76C70 /* TZPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 662EE0421DB11A0600A76C70 /* TZPhotoPreviewController.m */; };
 		662EE0501DB11A0600A76C70 /* TZVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 662EE0441DB11A0600A76C70 /* TZVideoPlayerController.m */; };
 		662EE0511DB11A0600A76C70 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 662EE0461DB11A0600A76C70 /* UIView+Layout.m */; };
+		668726AE1DD828500083DCA9 /* GetDataServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 668726AD1DD828500083DCA9 /* GetDataServer.m */; };
 		886DCDF0DD231BEC093E762E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D02519FFF4EE09DC3A565FC9 /* libPods.a */; };
 		97035C1F1DB9A95500533259 /* AddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97035C1E1DB9A95500533259 /* AddressTableViewCell.m */; };
 		97035C241DB9D78700533259 /* DecorationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97035C221DB9D78700533259 /* DecorationViewController.m */; };
@@ -552,6 +553,8 @@
 		662EE0441DB11A0600A76C70 /* TZVideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZVideoPlayerController.m; sourceTree = "<group>"; };
 		662EE0451DB11A0600A76C70 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		662EE0461DB11A0600A76C70 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		668726AC1DD828500083DCA9 /* GetDataServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetDataServer.h; sourceTree = "<group>"; };
+		668726AD1DD828500083DCA9 /* GetDataServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetDataServer.m; sourceTree = "<group>"; };
 		97035C1D1DB9A95500533259 /* AddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressTableViewCell.h; sourceTree = "<group>"; };
 		97035C1E1DB9A95500533259 /* AddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressTableViewCell.m; sourceTree = "<group>"; };
 		97035C211DB9D78700533259 /* DecorationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecorationViewController.h; sourceTree = "<group>"; };
@@ -965,6 +968,8 @@
 				048AD8FE1CD871F600C1B641 /* ViewController.m */,
 				662EE02E1DB10EF500A76C70 /* RequestServer.h */,
 				662EE02F1DB10EF500A76C70 /* RequestServer.m */,
+				668726AC1DD828500083DCA9 /* GetDataServer.h */,
+				668726AD1DD828500083DCA9 /* GetDataServer.m */,
 				048AD9541CD9857000C1B641 /* PrefixHeader.pch */,
 				048AD9001CD871F600C1B641 /* Main.storyboard */,
 				048AD9031CD871F600C1B641 /* Assets.xcassets */,
@@ -1673,6 +1678,7 @@
 				97035C1F1DB9A95500533259 /* AddressTableViewCell.m in Sources */,
 				04B80AD11D30906400FEED1F /* WDZXBTableViewCell.m in Sources */,
 				04C93F801CDC5DEC00B39146 /* View+MASAdditions.m in Sources */,
+				668726AE1DD828500083DCA9 /* GetDataServer.m in Sources */,
 				662EE0301DB10EF500A76C70 /* RequestServer.m in Sources */,
 				041812791CE1AE6A00C4F3C0 /* WDZXViewController.m in Sources */,
 				046D796E1D37410F009E718A /* UIView+MJExtension.m in Sources */,
