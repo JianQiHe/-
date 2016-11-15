@@ -325,7 +325,10 @@
         
         dict = [NSJSONSerialization  JSONObjectWithData:datas options:NSJSONReadingMutableLeaves error:&ERR];
         
-        NSLog(@"返回的数据：%@", dict);
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *str = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        //            NSLog(@"返回的数据：%@", dict);
+        NSLog(@"Json:%@", str);
 
         dict1 = [NSDictionary dictionaryWithDictionary:dict[@"data"][0]];
         dict2 =[NSDictionary dictionaryWithDictionary:dict[@"data"][1]];

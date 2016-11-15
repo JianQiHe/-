@@ -35,4 +35,24 @@
         
 }
 
++ (void)changePWDWithURL:(NSString *)url paramsDic:(NSDictionary *)dic CallBack:(CallBack)callBack {
+    
+    url = [NSString stringWithFormat:@"%@/%@/%@/%@", url, dic[@"ID"], dic[@"oldPWD"], dic[@"newPWD"]];
+    //
+    url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    NSLog(@"参数：%@", dic);
+    
+    [RequestServer RequestWithURL:url type:@"POST" paramsDic:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        id data = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        
+        NSLog(@"返回数据：%@", data);
+        
+        callBack(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        callBack(nil);
+    }];
+}
+
 @end
