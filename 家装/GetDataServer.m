@@ -20,4 +20,19 @@
     }];
 }
 
++ (void)loginWithURL:(NSString *)url paramsDic:(NSDictionary *)dic CallBack:(CallBack)callBack {
+
+    url = [NSString stringWithFormat:@"%@/%@/%@/%@", url, dic[@"type"], dic[@"userName"], dic[@"password"]];
+//
+    url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [RequestServer RequestWithURL:url type:@"POST" paramsDic:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        callBack(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        callBack(nil);
+    }];
+        
+}
+
 @end

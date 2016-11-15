@@ -291,6 +291,8 @@
         NSString *str=[NSString stringWithFormat:@"http://jiazhuang.siruoit.com/index.php?api/api-gs-0-0-0-0-0-%d",k];
     
         NSURL *url = [NSURL URLWithString:[str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];                        // UTF－8
+    
+    NSLog(@"url: %@", url);
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
         // 请求数据，设置成功与失败的回调函数
@@ -298,6 +300,8 @@
             NSString *html = operation.responseString;
             NSData *data=[html dataUsingEncoding:NSUTF8StringEncoding];
             NSDictionary *dict=[NSJSONSerialization  JSONObjectWithData:data options:0 error:nil];
+            
+            NSLog(@"返回的数据：%@", dict);
     
             dict1 = [NSDictionary dictionaryWithDictionary:dict[@"data"][0]];
             dict2 =[NSDictionary dictionaryWithDictionary:dict[@"data"][1]];
@@ -638,6 +642,8 @@
 
 
     NSURL *url = [NSURL URLWithString:[str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];                        // UTF－8
+    
+    NSLog(@"url: %@", url);
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
     // 请求数据，设置成功与失败的回调函数
@@ -645,6 +651,8 @@
         NSString *html = operation.responseString;
         NSData *data=[html dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *dict=[NSJSONSerialization  JSONObjectWithData:data options:0 error:nil];
+        
+        NSLog(@"返回的数据：%@", dict);
         
 //        dict1 = [NSDictionary dictionaryWithDictionary:dict[@"data"][0]];
 //        dict2 =[NSDictionary dictionaryWithDictionary:dict[@"data"][1]];

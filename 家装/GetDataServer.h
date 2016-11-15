@@ -14,4 +14,6 @@ typedef void (^CallBack) (id obj);
 
 + (void)zhuangXiuRiJi:(NSString *)url paramsDic:(NSDictionary *)dic CallBack:(CallBack)callBack;
 
++ (void)loginWithURL:(NSString *)url paramsDic:(NSDictionary *)dic CallBack:(CallBack)callBack;
+
 @end

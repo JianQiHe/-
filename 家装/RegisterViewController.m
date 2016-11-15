@@ -280,7 +280,7 @@
 
 -(void)login
 {
-    NSLog(@"xixixii");
+
     [self RegisterSuccess];
     
     [SMSSDK commitVerificationCode:verification.text phoneNumber:PhoneNumber.text zone:@"86" result:^(NSError *error) {

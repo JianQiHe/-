@@ -22,14 +22,18 @@
     manager.requestSerializer.timeoutInterval = 15;
     
     NSLog(@"URL: %@", urlStr);
+    NSLog(@"PamasDic: %@", pamsDic);
     
-    [manager POST:@"POST" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    [manager POST:urlStr parameters:pamsDic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
-        NSLog(@"responseObject: %@", responseObject);
+        NSString *html = operation.responseString;
+        NSData* data=[html dataUsingEncoding:NSUTF8StringEncoding];
+        id dict=[NSJSONSerialization  JSONObjectWithData:data options:0 error:nil];
+        NSLog(@"%@", dict);
         success(operation, responseObject);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         
-        NSLog(@"error: %@", error);
+        NSLog(@"错误信息：error: %@", error.description);
         failure(operation, error);
     }];
 }

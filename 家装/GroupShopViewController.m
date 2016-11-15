@@ -141,6 +141,7 @@
     NSString *str=[NSString stringWithFormat:@"http://jiazhuang.siruoit.com/index.php?api/api-tuan"];
     
     NSURL *url = [NSURL URLWithString:[str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];                        // UTF－8
+    NSLog(@"url：%@", url);
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
     // 请求数据，设置成功与失败的回调函数

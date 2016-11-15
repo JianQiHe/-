@@ -14,6 +14,9 @@
 #import "AmendViewController.h"
 #import "Danli.h"
 #import "MBProgressHUD+NJ.h"
+
+#import "GetDataServer.h"
+
 @interface GRZLViewController ()<UITextFieldDelegate>
 {
     NSMutableDictionary *Mdic;
@@ -280,7 +283,6 @@
     }else{
         type = @"0";
         urlStr = @"http://jiazhuang.siruoit.com/index.php?api/api-login"  ;
-
     }
 //    //邮箱是0  手机是1  jiazhuang.siruoit.com/index.php?api/api-login/type/uname/pwd  http://jiazhuang.siruoit.com/index.php?api/api-login/1/
 //    NSString *st = [NSString stringWithFormat:@"%@/%@/%@",urlStr,Str1,Str2];
@@ -335,25 +337,51 @@
 //    // 加入队列
 //    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
 //    [queue addOperation:operation];
+    
+//    NSString *url = @"http://jiazhuang.siruoit.com/index.php?api/api-login";
+//
+//    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+//                         user.text,@"userName",
+//                         password.text,@"password",
+//                         type,@"type"
+//                         , nil];
 //    
+//    [GetDataServer loginWithURL:url paramsDic:dic CallBack:^(id obj) {
+//        
+//        if (obj != nil) {
+//            
+//            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:obj options:NSJSONReadingMutableContainers error:nil];
+//            
+//            NSLog(@"返回的数据：%@", dic);
+//        }
+//    }];
+    
 }
 - (void)loginByPhone{
+    
+
+    
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
                           password.text,@"PWD",
                           user.text,@"PHONE",nil];
     NSString *path = @"http://jiazhuang.siruoit.com/index.php?api/api-loginbyphone";
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    //post请求
-    [manager POST:path parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSLog(@"%@",responseObject);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        NSLog(@"%@",error.description);
+//    
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    
+//    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+//    //post请求
+//    [manager POST:path parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        
+//        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+//        
+//        NSLog(@"%@", dic);
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        
+//        NSLog(@"错误信息：%@",error.description);
+//    }];
+//    
+
+    [GetDataServer loginWithURL:path paramsDic:dict CallBack:^(id obj) {
         
     }];
 

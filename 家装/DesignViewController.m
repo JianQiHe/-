@@ -302,6 +302,8 @@
     NSString *str=[NSString stringWithFormat:@"http://jiazhuang.siruoit.com/index.php?api/api-finddesigner-%@-%@-%@-%@-0-%d",Str1,Str2,Str3,Str4,k];
 
     NSURL *url = [NSURL URLWithString:[str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];                        // UTF－8
+    
+    NSLog(@"url：%@", url);
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
     // 请求数据，设置成功与失败的回调函数
@@ -322,6 +324,8 @@
         
         
         dict = [NSJSONSerialization  JSONObjectWithData:datas options:NSJSONReadingMutableLeaves error:&ERR];
+        
+        NSLog(@"返回的数据：%@", dict);
 
         dict1 = [NSDictionary dictionaryWithDictionary:dict[@"data"][0]];
         dict2 =[NSDictionary dictionaryWithDictionary:dict[@"data"][1]];
