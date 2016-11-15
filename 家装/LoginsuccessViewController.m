@@ -19,6 +19,8 @@
     UITableView *tabview;
     NSMutableArray *_userImg;
     UIImageView *_imgv;
+    
+    NSDictionary *dic;
 }
 
 @end
@@ -44,13 +46,18 @@
     
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *dic  = [userDefaults objectForKey:@"User"];
+     dic = [userDefaults objectForKey:@"User"];
     
     
     _imgv = [[UIImageView alloc]init];
     [view addSubview:_imgv];
     NSString *imgvStr = [NSString stringWithFormat:@"http://jiazhuang.siruoit.com/attachs/%@",dic[@"data"][0][@"face"]];
     [_imgv sd_setImageWithURL:[NSURL URLWithString:imgvStr] placeholderImage:[UIImage imageNamed:@"imgv"]];
+    
+    if ([userDefaults objectForKey:@"UserPhoto"] != nil) {
+        _imgv.image = [UIImage imageWithData:[userDefaults objectForKey:@"UserPhoto"]];
+    }
+    
     _imgv.layer.cornerRadius = 25;
     [_imgv mas_makeConstraints:^(MASConstraintMaker *make){
         make.top.equalTo(view.mas_top).offset(15);
@@ -311,7 +318,7 @@
 
 
 - (void)changeUserImg{
-    TZImagePickerController *pickVC = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
+    TZImagePickerController *pickVC = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:self];
     pickVC.allowTakePicture = NO;
     [pickVC setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
         
@@ -324,10 +331,15 @@
                 
                 return;
             }
+            
+            
             _imgv.image = [_userImg objectAtIndex:i];
+            
+            NSData *data = UIImagePNGRepresentation(_imgv.image);
+            [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"UserPhoto"];
+            
             _imgv.tag = i;
             [_userImg removeAllObjects];
-            
         }
 
     }];
@@ -469,7 +481,16 @@
             make.bottom.equalTo(cell.mas_bottom).offset(-15);
         }];
         
-        NSArray *arr2 = @[@"西元前的布拉达广场",@"上海  外滩",@"13689774586",@"4638alks@sdh.com",@"汉 梭罗"];
+        NSDictionary *dict2 = dic[@"data"][0];
+        
+        NSString *uName = [NSString stringWithFormat:@"%@", dict2[@"uname"]];
+        NSString *place = @"--";
+        NSString *phoneNum = [NSString stringWithFormat:@"%@", dict2[@"mobile"]];
+        NSString *mail = [NSString stringWithFormat:@"%@", dict2[@"mail"]];
+        
+        NSArray *arr2 = @[uName, place, phoneNum, mail,@"--"];
+        
+//        NSArray *arr2 = @[@"西元前的布拉达广场",@"上海  外滩",@"13689774586",@"4638alks@sdh.com",@"汉 梭罗"];
 //        UILabel *lab2 = [[UILabel alloc]init];
 //        lab2.backgroundColor = [UIColor clearColor];
 //        lab1.numberOfLines = 0;//根据最大行数需求来设置

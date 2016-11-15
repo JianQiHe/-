@@ -53,14 +53,18 @@
     UIImageView *xinfengView;
     UILabel *youxianglab;
     UILabel *renzheng2;
+    
+    BOOL isLogin;
 }
 
 
 - (void)viewWillAppear:(BOOL)animated
 {
 
+//    isLogin = [[NSUserDefaults standardUserDefaults] objectForKey:@"LoginSuccess"];
+    isLogin = _instance.isLogin;
     
-    if ([_instance.status isEqualToString:@"登录成功"])
+    if (isLogin)
     {
         imgaV.hidden = YES;
         lab.hidden = YES;
@@ -76,11 +80,15 @@
         youxianglab.hidden = NO;
         renzheng2.hidden = NO;
         
-    
-    
-    namelab.text = Mdic[@"data"][0][@"uname"];
-    NSString *imgVStr = [NSString stringWithFormat:@"http://jiazhuang.siruoit.com/attachs/%@",Mdic[@"data"][0][@"face"]];
-    [imgV sd_setImageWithURL:[NSURL URLWithString:imgVStr] placeholderImage:[UIImage imageNamed:@"imgVStr"]];
+        namelab.text = Mdic[@"data"][0][@"uname"];
+        NSString *imgVStr = [NSString stringWithFormat:@"http://jiazhuang.siruoit.com/attachs/%@",Mdic[@"data"][0][@"face"]];
+        [imgV sd_setImageWithURL:[NSURL URLWithString:imgVStr] placeholderImage:[UIImage imageNamed:@"imgVStr"]];
+        
+        NSUserDefaults *userdefault = [NSUserDefaults standardUserDefaults];
+        if ([userdefault objectForKey:@"UserPhoto"] != nil) {
+            imgV.image = [UIImage imageWithData:[userdefault objectForKey:@"UserPhoto"]];
+        }
+        
     int number =[Mdic[@"data"][0][@"type"] intValue];
     switch (number) {
         case -1:
@@ -139,6 +147,9 @@
     self.instance = [Danli sharedInstance];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     // Do any additional setup after loading the view.
+    
+    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"User"];
+    Mdic = [NSMutableDictionary dictionaryWithDictionary:dic];
 }
 
 #pragma mark -----------------添加两个View到头视图中-----------------------
@@ -186,6 +197,12 @@
   //未登录
     imgaV = [[UIImageView alloc]init];
     UIImage *img1 = [UIImage imageNamed:@"touxiang"];
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([userDefaults objectForKey:@"UserPhoto"] != nil) {
+        imgaV.image = [UIImage imageWithData:[userDefaults objectForKey:@"UserPhoto"]];
+    }
+    
     imgaV.backgroundColor = [UIColor clearColor];
     imgaV.image = img1;
     [firstview addSubview:imgaV];
@@ -449,7 +466,7 @@
 -(void)toGRZL
 {
     self.hidesBottomBarWhenPushed = YES;
-    if ([_instance.status isEqualToString:@"登录成功"]) {
+    if (isLogin) {
         
         LoginsuccessViewController *view = [[LoginsuccessViewController alloc]init];
         [self.navigationController pushViewController:view animated:YES]; //跳转到下一页面
@@ -479,7 +496,7 @@
 
 -(void)toWDDD
 {
-    if (![_instance.status isEqualToString:@"登录成功"])
+    if (!isLogin)
     {
         [MBProgressHUD showError:@"未登录!"];
     }
@@ -494,7 +511,7 @@
 }
 -(void)toWDRJ
 {
-    if (![_instance.status isEqualToString:@"登录成功"])
+    if (!isLogin)
     {
         [MBProgressHUD showError:@"未登录!"];
     }
@@ -508,7 +525,7 @@
 
 -(void)toSHDZ
 {
-    if (![_instance.status isEqualToString:@"登录成功"])
+    if (!isLogin)
     {
         [MBProgressHUD showError:@"未登录!"];
     }
@@ -562,7 +579,7 @@
         if (indexPath.row ==0)
     {
         
-        if (![_instance.status isEqualToString:@"登录成功"])
+        if (!isLogin)
         {
             [MBProgressHUD showError:@"未登录!"];
         }
@@ -576,7 +593,7 @@
     }
     else if (indexPath.row==1)
     {
-        if (![_instance.status isEqualToString:@"登录成功"])
+        if (!isLogin)
         {
             [MBProgressHUD showError:@"未登录!"];
         }else
@@ -589,7 +606,7 @@
     }
     else if (indexPath.row==2)
     {
-        if (![_instance.status isEqualToString:@"登录成功"])
+        if (!isLogin)
         {
             [MBProgressHUD showError:@"未登录!"];
         }else
@@ -664,7 +681,7 @@
 //    }
     else if (indexPath.row==3)
     {
-        if(![_instance.status isEqualToString:@"登录成功"])
+        if(!isLogin)
         {
             [MBProgressHUD showError:@"未登录!"];
         }else

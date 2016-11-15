@@ -19,7 +19,7 @@
 +(instancetype) sharedInstance;
 
 @property (strong, nonatomic) NSString *status;
-
+@property (nonatomic, assign) BOOL isLogin;
 
 
 

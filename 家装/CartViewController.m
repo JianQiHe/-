@@ -29,6 +29,8 @@
     NSMutableArray *selectGoods;
     
     UILabel *priceLabel;
+    
+    BOOL isLogin;
 }
 @property (retain , nonatomic) Danli* instance;
 
@@ -52,6 +54,8 @@
     NSLog(@"self.instace.staus%@",self.instance.status);
     [self creatData];
 
+    isLogin = self.instance.isLogin;
+//    isLogin = [[NSUserDefaults standardUserDefaults] objectForKey:@"LoginSuccess"];
 }
 
 /**
@@ -79,7 +83,7 @@
  */
 -(void)creatData
 {
-    if ([self.instance.status isEqualToString:@"登录成功"]) {
+    if (isLogin) {
         for (int i = 0; i < 10; i++) {
             CartModel *model = [[CartModel alloc]init];
             
