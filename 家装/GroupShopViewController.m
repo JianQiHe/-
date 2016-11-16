@@ -149,7 +149,12 @@
         NSString *html = operation.responseString;
         NSData *data=[html dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *dict=[NSJSONSerialization  JSONObjectWithData:data options:0 error:nil];
-        NSLog(@"获取到的数据为1111：%@",dict);
+        
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *str = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        //            NSLog(@"返回的数据：%@", dict);
+        NSLog(@"Json:%@", str);
+        
         dict1 = [NSDictionary dictionaryWithDictionary:dict[@"data"][0]];
         dict2 = [NSDictionary dictionaryWithDictionary:dict[@"data"][1]];
 

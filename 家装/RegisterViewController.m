@@ -292,12 +292,9 @@
             }
             if ([PassWord.text isEqualToString:PassWordAgain.text]){
                 
-                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"注册成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [alertView show];
+                
                 [self RegisterSuccess];
-                [self.navigationController popViewControllerAnimated:YES];
-                    self.hidesBottomBarWhenPushed = NO;
- 
+                
             }else {
                 
                 UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"两次密码输入不一致" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
@@ -377,6 +374,15 @@
     [manager POST:path parameters:registerDic success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
 //        NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+    
+        id dic =  [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        
+        NSLog(@"返回数据：%@", dic);
+        
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"注册成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alertView show];
+        [self.navigationController popViewControllerAnimated:YES];
+        self.hidesBottomBarWhenPushed = NO;
         
         NSLog(@"%@",responseObject);
         

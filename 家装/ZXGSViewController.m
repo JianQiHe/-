@@ -301,8 +301,12 @@
             NSData *data=[html dataUsingEncoding:NSUTF8StringEncoding];
             NSDictionary *dict=[NSJSONSerialization  JSONObjectWithData:data options:0 error:nil];
             
-            NSLog(@"返回的数据：%@", dict);
-    
+            
+            NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+            NSString *str = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+//            NSLog(@"返回的数据：%@", dict);
+            NSLog(@"Json:%@", str);
+            
             dict1 = [NSDictionary dictionaryWithDictionary:dict[@"data"][0]];
             dict2 =[NSDictionary dictionaryWithDictionary:dict[@"data"][1]];
             dict3 =[NSDictionary dictionaryWithDictionary:dict[@"data"][2]];

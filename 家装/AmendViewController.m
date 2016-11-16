@@ -84,7 +84,7 @@
     
 
     PassWord = [[UITextField alloc]init];
-    PassWord.placeholder = @"   设置登录密码";
+    PassWord.placeholder = @"   请输入旧密码";
     PassWord.secureTextEntry = NO;//密码形式
     PassWord.delegate = self;
     PassWord.keyboardType = UIKeyboardTypeNumbersAndPunctuation;//只能输入英语，符号，数字
@@ -104,7 +104,7 @@
     
     
     PassWordAgain = [[UITextField alloc]init];
-    PassWordAgain.placeholder = @"   确认登录密码";
+    PassWordAgain.placeholder = @"   请输入新密码";
     PassWordAgain.secureTextEntry = NO;//密码形式
     PassWordAgain.delegate = self;
     PassWordAgain.keyboardType = UIKeyboardTypeNumbersAndPunctuation;//只能输入英语，符号，数字
@@ -156,7 +156,7 @@
 
     
     for (int b=0; b<4; b++) {
-        NSArray *arr = @[@"手机号码",@"验证码",@"登录密码",@"确认密码"];
+        NSArray *arr = @[@"手机号码",@"验证码",@"旧密码",@"新密码"];
         UILabel *lab2 = [[UILabel alloc]initWithFrame:CGRectMake(0, 64+45*b, 80, 45)];
         lab2.text = arr[b];
         lab2.font = [UIFont systemFontOfSize:13];
@@ -276,40 +276,35 @@
     [alertView show];
     }
     
-
-    
-    
-   
-    
-
-    
 }
 
 
 -(void)login
 {
-    NSLog(@"xixixii");
     
-        [SMSSDK commitVerificationCode:verification.text phoneNumber:PhoneNumber.text zone:@"86" result:^(NSError *error) {
-        if (!error) {
-            if([PassWord.text isEqualToString:@""]){
-                
-                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"密码不能为空" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [alertView show];
-                
-            }
-            
-           if (PassWord.text == PassWordAgain.text) {
-                    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"修改成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                        [alertView show];
-                    [self.navigationController popViewControllerAnimated:YES];
-                    self.hidesBottomBarWhenPushed = NO;
+    if (PhoneNumber.text.length == 0) {
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"请输入手机号码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:@"返回", nil];
+        [alertView show];
+         return;
+    }else if (verification.text.length == 0) {
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"请输入验证码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:@"返回", nil];
+        [alertView show];
+         return;
+    }else if (PassWord.text.length == 0) {
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"请输入旧密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:@"返回", nil];
+        [alertView show];
+         return;
+    }else if (PassWordAgain.text.length == 0) {
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"请输入新密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:@"返回", nil];
+        [alertView show];
+        
+        return;
+    }
 
-            }else{
-                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"两次密码输入不一致" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [alertView show];
- 
-            }
+    [SMSSDK commitVerificationCode:verification.text phoneNumber:PhoneNumber.text zone:@"86" result:^(NSError *error) {
+        if (!error) {
+            
+            [self queRenChangePWD];
             
         }
         else
@@ -324,13 +319,8 @@
                 [alertView show];
             }
             
-            
-            
         }
     }];
-
-
-    
 }
 - (void)reKeyBoard
 {
@@ -338,6 +328,26 @@
     [verification resignFirstResponder];
     [PassWord resignFirstResponder];
     [PassWordAgain resignFirstResponder];
+    
+}
+
+- (void)queRenChangePWD {
+
+    NSString *url = @"http://jiazhuang.siruoit.com/index.php?api/api-passwd";
+    
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:@"User"];
+    
+    NSString *uid = dict[@"data"][0][@"uid"];
+    
+    NSDictionary *dic = @{@"ID":uid, @"oldPWD":PassWord.text, @"newPWD":PassWordAgain.text};
+    [GetDataServer changePWDWithURL:url paramsDic:dic CallBack:^(id obj) {
+    
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"修改成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alertView show];
+        [self.navigationController popViewControllerAnimated:YES];
+        self.hidesBottomBarWhenPushed = NO;
+        
+    }];
     
 }
 
