@@ -1517,8 +1517,8 @@
 				TargetAttributes = {
 					048AD8F31CD871F500C1B641 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 825675KB77;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = P289A5MV8H;
+						ProvisioningStyle = Manual;
 					};
 					048AD90C1CD871F600C1B641 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1958,9 +1958,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 825675KB77;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai UTOUU Network Technology Co., LTD";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai UTOUU Network Technology Co., LTD";
+				DEVELOPMENT_TEAM = P289A5MV8H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SMS_SDK",
@@ -1972,9 +1972,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yusheng123;
+				PRODUCT_BUNDLE_IDENTIFIER = com.utouu.enterprise.utouu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b93b22c1-a1c3-4776-a0fe-ef5e68466eb2";
+				PROVISIONING_PROFILE_SPECIFIER = UTOUU_Distribution_Enterprise;
 			};
 			name = Debug;
 		};
@@ -1984,9 +1985,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 825675KB77;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai UTOUU Network Technology Co., LTD";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai UTOUU Network Technology Co., LTD";
+				DEVELOPMENT_TEAM = P289A5MV8H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SMS_SDK",
@@ -1998,9 +1999,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yusheng123;
+				PRODUCT_BUNDLE_IDENTIFIER = com.utouu.enterprise.utouu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b93b22c1-a1c3-4776-a0fe-ef5e68466eb2";
+				PROVISIONING_PROFILE_SPECIFIER = UTOUU_Distribution_Enterprise;
 			};
 			name = Release;
 		};
